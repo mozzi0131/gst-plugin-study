@@ -20,7 +20,7 @@ plugin_sources = [
 gstpluginexample = library('gstplugin',
   plugin_sources,
   c_args: plugin_c_args,
-  dependencies : [gst_dep, glib_dep],
+  dependencies : [gst_dep],
   install : true,
   install_dir : plugins_install_dir,
 )
@@ -31,19 +31,6 @@ audiofilter_sources = [
   ]
 
 gstaudiofilterexample = library('gstaudiofilterexample',
-  audiofilter_sources,
-  c_args: plugin_c_args,
-  dependencies : [gst_dep, gstaudio_dep],
-  install : true,
-  install_dir : plugins_install_dir,
-)
-
-# Plugin 3 (myfilter example)
-audiofilter_sources = [
-  'src/gstmyfilter.c',
-  ]
-
-gstaudiofilterexample = library('gstmyfilterexample',
   audiofilter_sources,
   c_args: plugin_c_args,
   dependencies : [gst_dep, gstaudio_dep],

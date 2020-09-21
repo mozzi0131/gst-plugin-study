@@ -8,6 +8,7 @@ gst_version = meson.project_version()
 
 api_version = '1.0'
 
+glib_dep = dependency('glib-2.0', version : '>=2.44.0')
 gst_dep = dependency('gstreamer-1.0',
     fallback : ['gstreamer', 'gst_dep'])
 
